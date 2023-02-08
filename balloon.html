@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home page</title>
+     
+</head>
+
+<style> 
+    #needle {
+        
+        left: 350px;
+        top: 150px;
+        mix-blend-mode: multiply; 
+        opacity: 0;
+    }
+    #growing {
+        left: 0px;
+        top: 50px;
+        width: 50;
+        height: 50;
+    }
+    #red {
+        background-color: rgb(231, 64, 64);
+        
+    }
+</style>
+
+    <body>  
+        <button onclick="increaseSize()">Click to inflate the balloon</button>
+        <button onclick="moveLeft()" id = "red">Click to pop the balloon</button>
+        <br> <br> <br>
+        <img src="https://cdn.shopify.com/s/files/1/0536/7621/2412/products/052480_Metallic-Kiwi-Latex-Balloons-5in_-100pcs_01.jpg?v=1617737519"
+        alt="" id = "growing" width="50" height = "50">
+
+        <img src="http://mikenindia.com/wp-content/uploads/2017/08/GP-516.1.jpg"
+        alt= "" id = "needle"  style = "width: 75px; height: 75px;">
+
+        <script>
+                
+              //  impact = "no"
+               
+            var size = 125
+            function increaseSize(){
+                var g = document.getElementById("growing")
+                var h = parseInt(g.height)
+                var w = parseInt(g.width)
+                
+                if (size < 250) {
+                    size = size + 50
+                    newH = (h + 50)
+                    newW = (w + 50)
+                    g.height = newH
+                    g.width = newW
+                    setTimeout(increaseSize, 50)
+                }
+                else {
+                    direction = "down" 
+                    document.getElementById("red").style.backgroundColor = "green"
+                }
+            }
+
+            temp = document.getElementById("needle")        
+            // initialize position;
+           color = document.getElementById("red")     
+           var position = 350
+            function moveLeft() {
+                //alert("inside MoveLeft")
+                
+                if (color.style.backgroundColor == "green") {
+                    temp.style.opacity = 1
+                    // alert(temp.style.marginLeft)
+                    if (position > -65){
+                
+                        position = (position - 25)
+                        //alert(position)        
+                        temp.style.marginLeft = position + "px"
+                        setTimeout(moveLeft, 50)
+                    }
+                    
+                    else {
+                        deflate()
+                    };
+                }
+
+                else {
+                    return 0
+                }
+            }
+                
+            function deflate(){
+                var g = document.getElementById("growing")
+                var h = parseInt(g.height)
+                var w =parseInt(g.width)
+                temp.style.opacity = 0
+                //alert(size)
+                if (size > 125) {
+                    size = size - 50
+                    newH = (h - 50)
+                    newW = (w - 50)
+                    g.height = newH
+                    g.width = newW
+                    setTimeout(deflate, 50)
+                }        
+                else {                            
+                    color.style.backgroundColor = "red"
+                }
+        
+            }
+        </script>
+    </body>
+</html>
