@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home page</title>
+     
+</head>
+<body>
+    <button onclick="add()">Click me</button>
+    <button onclick="subtraction()">Click me for subtraction</button>
+    <button onclick="multiplication()">Click me for multiplication</button>
+    <button onclick="division()">Click me for divison</button>
+    <p style="text-align: center">Elias Zalles</p>
+
+
+    <script>
+        function add() {
+        var num1, num2, sum;
+      num1 = parseInt(prompt("Enter first number"))
+      num2 = parseInt(prompt("Enter second number"))
+    
+      sum = num1 + num2
+      alert("The sum is " + sum)
+      return res
+        }
+
+      function subtraction() {
+        var x, y, res;
+      x = parseInt(prompt("Enter first number"))
+      y = parseInt(prompt("Enter second number"))
+    
+      res = x - y
+      alert("The difference is " + res)
+      return res
+        }
+        function multiplication() {
+        var x, y, res;
+      x = parseInt(prompt("Enter first number"))
+      y = parseInt(prompt("Enter second number"))
+    
+      res = x * y
+      alert("The answer is " + res)
+      return res
+        }
+        function division() {
+        var x, y, res;
+      x = parseFloat(prompt("Enter first number"))
+      y = parseFloat(prompt("Enter second number"))
+    
+      res = x / y
+      alert("The answer is " + res)
+      return res
+        }
+    </script>
+    </body>
+</html>

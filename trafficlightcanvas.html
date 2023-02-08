@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Traffic Light</title>
+</head>
+<body>
+
+    <h2>Traffic Light Canvas</h2>
+       <canvas id= "myCanvas" width="300" height="430" style="border: 1px solid hsl(234, 91%, 42%);">
+    </canvas><br>
+        <button onclick="traffic()">click me</button>
+       <script>
+           var c = document.getElementById("myCanvas");
+           var ctx =c.getContext("2d");
+           
+           ctx.beginPath();
+           ctx.strokeStyle = "blue"
+           ctx.fillStyle = "black"
+           ctx.rect(22, 22, 150, 375);
+           ctx.fill()
+           ctx.stroke();
+           
+           ctx.beginPath();
+           ctx.strokeStyle = "blue"
+           ctx.fillStyle = "grey"
+           ctx.rect(20, 20, 150, 375);
+           ctx.fill()
+           ctx.stroke();
+
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "black"
+           ctx.arc(92, 82, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "red"
+           ctx.arc(95, 85, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "black"
+           ctx.arc(92, 202, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "white"
+           ctx.arc(95, 205, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "black"
+           ctx.arc(92, 322, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+           ctx.beginPath();
+           ctx.strokeStyle = "black"
+           ctx.fillStyle = "white"
+           ctx.arc(95, 325, 50, 0, (2)*Math.PI)
+           ctx.fill()
+           ctx.stroke();
+
+            num1 = 1;
+
+           function traffic() {
+    
+            if (num1 % 3 == 0)
+            {
+                ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "red"
+            ctx.arc(95, 85, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 205, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 325, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+            }
+            if (num1 % 3 == 1)
+            {
+                ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 85, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 205, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "green"
+            ctx.arc(95, 325, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+            }
+            if (num1 % 3 == 2)
+            {
+                ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 85, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "yellow"
+            ctx.arc(95, 205, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black"
+            ctx.fillStyle = "white"
+            ctx.arc(95, 325, 50, 0, (2)*Math.PI)
+            ctx.fill()
+            ctx.stroke();
+            }
+            num1++
+        }
+       </script>
+</body>
+</html>

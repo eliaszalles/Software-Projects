@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home page</title>
+     
+</head>
+    <body>  
+        <button onclick="delay()">Click to grow and shrink</button>
+        
+        <img src="https://www.onlogic.com/company/io-hub/wp-content/uploads/2016/02/blue-power-button_770x421.jpg"
+        alt="" id = "growing" width="125" height="125">
+
+        <script>
+            direction = "up"
+            var size = 125
+            function increaseSize(){
+                var g = document.getElementById("growing")
+                var h = parseInt(g.height)
+                var w = parseInt(g.width)
+                
+                if (size < 250) {
+                    size = size + 50
+                    newH = (h + 50)
+                    newW = (w + 50)
+                    g.height = newH
+                    g.width = newW
+                }
+                else {
+                    direction = "down" 
+                }
+            }
+            function decreaseSize(){
+                var g = document.getElementById("growing")
+                var h = parseInt(g.height)
+                var w = parseInt(g.width)
+                
+                if (size > 75) {
+                    size = size - 50
+                    newH = (h - 50)
+                    newW = (w - 50)
+                    g.height = newH
+                    g.width = newW
+
+                }
+                else {
+                    direction = "up" 
+                }
+
+            }
+            function delay() {
+                if (direction == "up") {
+                    
+                        setTimeout(increaseSize, 50)
+                }
+                else {
+                    
+                    setTimeout(decreaseSize, 50)
+                }
+            }
+
+        </script>
+    </body>
+</html>

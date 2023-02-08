@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home page</title>
+     
+</head>
+<body>  
+
+    <form>
+        <p>Enter Kilometers</p> <input type ="text" id="convert"/>
+        <br> <br>
+        <!-- 1 mile = 1.6 km -->
+        <input type="button" id = "km" onclick="convertMile()" value="Click to convert Kilometers to miles">
+        
+    </form>
+     <p id="output"> </p>
+<script>
+        
+         function convertMile(){
+           var num = parseInt(document.getElementById("convert").value)
+           var miles = 0.621371 * num
+           document.getElementById("output").innerHTML = miles
+            
+         }
+</script>
+</body>
+</html>
